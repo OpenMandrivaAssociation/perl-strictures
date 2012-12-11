@@ -1,18 +1,19 @@
 %define upstream_name    strictures
 %define upstream_version 1.002002
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
 
-Summary:    No summary found
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module//%{upstream_name}-%{upstream_version}.tar.gz
-Provides:   perl(strictures)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+Summary:	strictures perl module
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module//%{upstream_name}-%{upstream_version}.tar.gz
+
+BuildRequires:	perl-devel
+Provides:	perl(strictures)
+BuildArch:	noarch
 
 %description
 I've been writing the equivalent of this module at the top of my code for
@@ -29,24 +30,27 @@ Any time I see a warning from my code, that indicates a mistake.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc README META.yml Changes
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
 
+
+%changelog
+* Sat Jun 25 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.2.2-2mdv2011.0
++ Revision: 687048
+- fix dependencies
+
+* Fri Jun 17 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.2.2-1
++ Revision: 685797
+- import perl-strictures
 
