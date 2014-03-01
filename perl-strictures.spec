@@ -1,5 +1,4 @@
-%define upstream_name    strictures
-%define upstream_version 1.004004
+%define upstream_name    strictures%define upstream_version 1.005003
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
@@ -9,7 +8,7 @@ Summary:	strictures perl module
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module//strictures-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module//%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 Provides:	perl(strictures)
@@ -53,5 +52,6 @@ perl Makefile.PL INSTALLDIRS=vendor
 * Fri Jun 17 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.2.2-1
 + Revision: 685797
 - import perl-strictures
+
 
 
