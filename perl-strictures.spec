@@ -1,4 +1,5 @@
-%define upstream_name    strictures%define upstream_version 1.005003
+%define upstream_name    strictures
+%define upstream_version 1.005004
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
@@ -52,6 +53,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 * Fri Jun 17 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.2.2-1
 + Revision: 685797
 - import perl-strictures
+
 
 
 
