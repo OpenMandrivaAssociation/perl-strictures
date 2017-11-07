@@ -1,6 +1,2 @@
-removed_sources:
-  strictures-1.002002.tar.gz: cbb8491da9b54a5c9920254716eb21d6e17fc788
-  strictures-1.004004.tar.gz: 65dc8043e8d965f2772cb477631f21496dcaf4e9
-  strictures-1.005003.tar.gz: a596e82dacb7841f7684985d850dd388e3cef7fc
 sources:
-  strictures-1.005004.tar.gz: ce8c809c219ad0f1392608b1dd7f50c62dff7654
+  strictures-2.000003.tar.gz: 7a8e4855318f17bff6656c01bf93ceacde7ee7c6
