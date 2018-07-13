@@ -11,6 +11,7 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://search.cpan.org/CPAN/authors/id/H/HA/HAARG/%{upstream_name}-%{upstream_version}.tar.gz
 
+BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
 Provides:	perl(strictures)
 BuildArch:	noarch
