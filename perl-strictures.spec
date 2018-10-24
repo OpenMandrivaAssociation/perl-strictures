@@ -1,9 +1,9 @@
 %define upstream_name    strictures
-%define upstream_version 2.000003
+%define upstream_version 2.000005
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Release:	1
 
 Summary:	strictures perl module
 License:	GPL+ or Artistic
