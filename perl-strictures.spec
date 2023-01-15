@@ -1,15 +1,14 @@
 %define upstream_name    strictures
-%define upstream_version 2.000006
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
+Version:	2.000006
 Release:	1
 
 Summary:	strictures perl module
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://metacpan.org/pod/strictures
-Source0:	http://search.cpan.org/CPAN/authors/id/H/HA/HAARG/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://search.cpan.org/CPAN/authors/id/H/HA/HAARG/%{upstream_name}-%{version}.tar.gz
 
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl-devel
@@ -28,33 +27,19 @@ clean.
 Any time I see a warning from my code, that indicates a mistake.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%autosetup -p1 -n %{upstream_name}-%{version}
+perl Makefile.PL INSTALLDIRS=vendor
 
 %build
-perl Makefile.PL INSTALLDIRS=vendor
-%make
+%make_build
 
 %check
 %make test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc README META.yml Changes
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
-
-
-%changelog
-* Sat Jun 25 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.2.2-2mdv2011.0
-+ Revision: 687048
-- fix dependencies
-
-* Fri Jun 17 2011 Guillaume Rousse <guillomovitch@mandriva.org> 1.2.2-1
-+ Revision: 685797
-- import perl-strictures
-
-
-
-
