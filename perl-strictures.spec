@@ -2,7 +2,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	2.000006
-Release:	2
+Release:	3
 
 Summary:	strictures perl module
 License:	GPL+ or Artistic
